@@ -1,4 +1,4 @@
-package com.example.approom_31163386.ui.item
+package com.example.rgm31163386.ui.item
 
 import ItemDetails
 import ItemUiState

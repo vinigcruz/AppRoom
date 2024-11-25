@@ -4,7 +4,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.example.approom_31163386.data.Item
+import com.example.rgm31163386.data.Item
 import kotlinx.coroutines.flow.Flow
 
 @Dao

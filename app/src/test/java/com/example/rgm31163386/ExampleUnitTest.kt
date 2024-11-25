@@ -1,4 +1,4 @@
-package com.example.approom_31163386
+package com.example.rgm31163386
 
 import org.junit.Test
 

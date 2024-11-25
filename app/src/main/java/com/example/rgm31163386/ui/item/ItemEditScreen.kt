@@ -1,4 +1,4 @@
-package com.example.approom_31163386.ui.item
+package com.example.rgm31163386.ui.item
 
 import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
@@ -13,12 +13,11 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.approom_31163386.ui.theme.InventoryTheme
-import com.example.inventory.InventoryTopAppBar
-import com.example.inventory.R
-import com.example.inventory.ui.AppViewModelProvider
-import com.example.inventory.ui.navigation.NavigationDestination
-import com.example.inventory.ui.theme.InventoryTheme
+import com.example.rgm31163386.AppViewModelProvider
+import com.example.rgm31163386.InventoryTopAppBar
+import com.example.rgm31163386.R
+import com.example.rgm31163386.ui.navigation.NavigationDestination
+import com.example.rgm31163386.ui.theme.InventoryTheme
 
 object ItemEditDestination : NavigationDestination {
     override val route = "item_edit"

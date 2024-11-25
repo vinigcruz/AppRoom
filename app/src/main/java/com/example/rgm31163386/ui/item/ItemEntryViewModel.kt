@@ -2,35 +2,41 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.example.approom_31163386.data.Item
+import com.example.rgm31163386.data.Item
 import java.text.NumberFormat
 
 /**
  * ViewModel to validate and insert items in the Room database.
  */
-class ItemEntryViewModel : ViewModel() {
+class ItemEntryViewModel(private val itemsRepository: ItemsRepository) : ViewModel() {
 
-    /**
-     * Holds current item ui state
-     */
+    // Mantém o estado atual da UI do item
     var itemUiState by mutableStateOf(ItemUiState())
         private set
 
-    /**
-     * Updates the [itemUiState] with the value provided in the argument. This method also triggers
-     * a validation for input values.
-     */
+    // Atualiza o estado do UI com os detalhes do item e valida os dados
     fun updateUiState(itemDetails: ItemDetails) {
         itemUiState =
             ItemUiState(itemDetails = itemDetails, isEntryValid = validateInput(itemDetails))
     }
 
+    // Valida os campos de entrada do formulário
     private fun validateInput(uiState: ItemDetails = itemUiState.itemDetails): Boolean {
         return with(uiState) {
             name.isNotBlank() && price.isNotBlank() && quantity.isNotBlank()
         }
     }
+
+    /**
+     * Insere um item no banco de dados se a validação for bem-sucedida.
+     */
+    suspend fun saveItem() {
+        if (itemUiState.isEntryValid) {
+            itemsRepository.insertItem(itemUiState.itemDetails.toItem())
+        }
+    }
 }
+
 
 /**
  * Represents Ui State for an Item.
@@ -80,3 +86,5 @@ fun Item.toItemDetails(): ItemDetails = ItemDetails(
     price = price.toString(),
     quantity = quantity.toString()
 )
+suspend fun saveItem() {
+}

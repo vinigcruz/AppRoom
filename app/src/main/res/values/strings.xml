@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">AppRoom_31163386</string>
+    <string name="save_action">res/values/strings.xml</string>
+    <string name="item_name_req">Item Name</string>
+    <string name="item_price_req">Item Price</string>
+    <string name="quantity_req">Quantity</string>
+    <string name="required_fields"><![CDATA[<string name=\"required_fields\">Required fields are marked with *</string>\n]]></string>
+    <string name="sell">Sell</string>
+    <string name="delete">Delete</string>
+    <string name="attention">Attention</string>
+    <string name="delete_question">Are you sure you want to delete this item?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="item">Item</string>
+    <string name="quantity_in_stock">Quantity in Stock</string>
+    <string name="price">Price</string>
+    <string name="item_entry_title" />
+    <string name="no_item_description" />
+    <string name="in_stock" />
+    <string name="edit_item_title" />
+    <string name="item_detail_title" />
 </resources>

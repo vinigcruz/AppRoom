@@ -1,5 +1,6 @@
-package com.example.approom_31163386.ui.item
+package com.example.rgm31163386.ui.item
 
+import ItemDetails
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -36,19 +37,19 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.inventory.InventoryTopAppBar
-import com.example.inventory.R
-import com.example.inventory.data.Item
-import com.example.inventory.ui.navigation.NavigationDestination
-import com.example.inventory.ui.theme.InventoryTheme
+import com.example.rgm31163386.InventoryTopAppBar
+import com.example.rgm31163386.data.Item
+import com.example.rgm31163386.ui.navigation.NavigationDestination
+import com.example.rgm31163386.ui.theme.InventoryTheme
+import com.example.approom_31163386.R
+import toItem
 
 object ItemDetailsDestination : NavigationDestination {
     override val route = "item_details"
-    override val titleRes = R.string.item_detail_title
-    const val itemIdArg = "itemId"
+    override val titleRes = "Item Details"
+    val itemIdArg = "itemId"
     val routeWithArgs = "$route/{$itemIdArg}"
 }
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ItemDetailsScreen(
@@ -75,7 +76,7 @@ fun ItemDetailsScreen(
                     contentDescription = stringResource(R.string.edit_item_title),
                 )
             }
-        }, modifier = modifier
+        },modifier = modifier
     ) { innerPadding ->
         ItemDetailsBody(
             itemDetailsUiState = ItemDetailsUiState(),
@@ -91,7 +92,6 @@ fun ItemDetailsScreen(
         )
     }
 }
-
 @Composable
 private fun ItemDetailsBody(
     itemDetailsUiState: ItemDetailsUiState,
@@ -219,12 +219,17 @@ private fun DeleteConfirmationDialog(
 fun ItemDetailsScreenPreview() {
     InventoryTheme {
         ItemDetailsBody(
-            ItemDetailsUiState(
+            itemDetailsUiState = ItemDetailsUiState(
                 outOfStock = true,
-                itemDetails = ItemDetails(1, "Pen", "$100", "10")
+                itemDetails = ItemDetails(
+                    id = 1,
+                    name = "Pen",
+                    price = "100.0",
+                    quantity = "10"
+                )
             ),
-            onSellItem = {},
-            onDelete = {}
+            onSellItem = { /* Do nothing */ },
+            onDelete = { /* Do nothing */ }
         )
     }
 }

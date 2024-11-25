@@ -1,13 +1,9 @@
-package com.example.approom_31163386.ui.item
+package com.example.rgm31163386.ui.item
 
-class ItemDetailViewModel {
-}import androidx.lifecycle.SavedStateHandle
+import ItemDetails
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.example.inventory.data.ItemsRepository
 
-/**
- * ViewModel to retrieve, update and delete an item from the [ItemsRepository]'s data source.
- */
 class ItemDetailsViewModel(
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
@@ -19,10 +15,7 @@ class ItemDetailsViewModel(
     }
 }
 
-/**
- * UI state for ItemDetailsScreen
- */
 data class ItemDetailsUiState(
     val outOfStock: Boolean = true,
-    val itemDetails: ItemDetails = ItemDetails()
+    val itemDetails: ItemDetails
 )

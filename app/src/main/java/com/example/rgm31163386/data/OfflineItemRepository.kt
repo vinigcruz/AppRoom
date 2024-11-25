@@ -1,4 +1,4 @@
-import com.example.approom_31163386.data.Item
+import com.example.rgm31163386.data.Item
 import kotlinx.coroutines.flow.Flow
 
 class OfflineItemsRepository(private val itemDao: ItemDao) : ItemsRepository {

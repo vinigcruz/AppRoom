@@ -2,7 +2,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.approom_31163386.data.Item
+import com.example.rgm31163386.data.Item
 
 
 @Database(entities = [Item::class], version = 1, exportSchema = false)

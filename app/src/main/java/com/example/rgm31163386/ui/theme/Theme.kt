@@ -1,4 +1,4 @@
-package com.example.approom_31163386.ui.theme
+package com.example.rgm31163386.ui.theme
 
 import android.app.Activity
 import android.os.Build
