@@ -1,5 +1,0 @@
-
-
-override val itemsRepository: ItemsRepository by lazy {
-    OfflineItemsRepository(InventoryDatabase.getDatabase(context).itemDao())
-}
