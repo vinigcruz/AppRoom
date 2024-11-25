@@ -2,7 +2,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.example.inventory.data.Item
+import com.example.approom_31163386.data.Item
 import java.text.NumberFormat
 
 /**
