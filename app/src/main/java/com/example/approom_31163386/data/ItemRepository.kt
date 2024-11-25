@@ -2,31 +2,31 @@ import com.example.approom_31163386.data.Item
 import kotlinx.coroutines.flow.Flow
 
 /**
- * Repository that provides insert, update, delete, and retrieve of [Item] from a given data source.
+ * Repositório que fornece operações de inserção, atualização, exclusão e recuperação de [Item] de uma fonte de dados específica.
  */
 interface ItemsRepository {
     /**
-     * Retrieve all the items from the the given data source.
+     * Recupera todos os itens da fonte de dados especificada.
      */
     fun getAllItemsStream(): Flow<List<Item>>
 
     /**
-     * Retrieve an item from the given data source that matches with the [id].
+     * Recupera um item da fonte de dados que corresponde ao [id].
      */
     fun getItemStream(id: Int): Flow<Item?>
 
     /**
-     * Insert item in the data source
+     * Insere um item na fonte de dados.
      */
     suspend fun insertItem(item: Item)
 
     /**
-     * Delete item from the data source
+     * Exclui um item da fonte de dados.
      */
     suspend fun deleteItem(item: Item)
 
     /**
-     * Update item in the data source
+     * Atualiza um item na fonte de dados.
      */
     suspend fun updateItem(item: Item)
 }
